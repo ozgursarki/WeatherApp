@@ -1,8 +1,7 @@
-package com.ozgursarki.weatherapp.ui
+package com.ozgursarki.weatherapp.ui.screen.country
 
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
-import com.ozgursarki.weatherapp.domain.Country
+import com.ozgursarki.weatherapp.domain.model.Country
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

@@ -1,4 +1,4 @@
-package com.ozgursarki.weatherapp.domain
+package com.ozgursarki.weatherapp.domain.model
 
 data class CountryItem(
     val alpha3: String,
