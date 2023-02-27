@@ -59,7 +59,7 @@ object PresentationModule {
                 InputStreamReader(
                     context.applicationContext
                         .resources
-                        .openRawResource(R.raw.countries)
+                        .openRawResource(R.raw.cities)
                 )
             )
             val fromJson = gson.fromJson(reader, Cities::class.java)

@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.ozgursarki.weatherapp.R
@@ -35,7 +37,10 @@ class CountriesFragment : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        adapter = CountriesAdapter()
+        adapter = CountriesAdapter(itemClicked = {
+           val action = CountriesFragmentDirections.actionCountriesFragmentToCitiesFragment(it)
+            findNavController().navigate(action)
+        })
         val recyclerview = view.findViewById<RecyclerView>(R.id.countriesRv)
         recyclerview.adapter = adapter
         recyclerview.layoutManager = StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL)

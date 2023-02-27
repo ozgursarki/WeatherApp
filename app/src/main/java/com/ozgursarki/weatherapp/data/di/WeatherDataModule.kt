@@ -1,6 +1,7 @@
 package com.ozgursarki.weatherapp.data.di
 
 import com.ozgursarki.weatherapp.data.remote.WeatherAPI
+import com.ozgursarki.weatherapp.data.repository.WeatherRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -37,5 +38,11 @@ object WeatherDataModule {
             .client(okHttpClient)
             .build()
             .create()
+    }
+
+    @Provides
+    @Singleton
+    fun provideWeatherRepository(api : WeatherAPI) : WeatherRepository {
+        return WeatherRepository(api)
     }
 }

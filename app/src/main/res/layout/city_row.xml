@@ -1,13 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/cityText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+    <data>
 
-    </TextView>
+        <variable
+            name="city"
+            type="com.ozgursarki.weatherapp.domain.model.CitiesItem" />
+    </data>
 
-</FrameLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/layout_border"
+        android:paddingBottom="10dp">
+
+
+        <TextView
+            android:id="@+id/noTitle"
+            android:layout_width="wrap_content"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/cityNameTitle"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="NO" />
+
+        <TextView
+            android:id="@+id/cityNameTitle"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/cityLatitudeTitle"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/noTitle"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="City Name" />
+
+        <TextView
+            android:id="@+id/cityLatitudeTitle"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/cityLongitudeTitle"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cityNameTitle"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Latitude" />
+
+        <TextView
+            android:id="@+id/cityLongitudeTitle"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cityLatitudeTitle"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Longitude" />
+
+        <TextView
+            android:id="@+id/cityNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/noTitle"
+            app:layout_constraintTop_toBottomOf="@+id/noTitle"
+            app:layout_constraintEnd_toEndOf="@id/noTitle"
+            tools:text="1"
+            android:text="@{city.plate}"/>
+
+        <TextView
+            android:id="@+id/cityName"
+            android:layout_width="wrap_content"
+            android:textAllCaps="true"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintTop_toBottomOf="@+id/cityNameTitle"
+            app:layout_constraintStart_toStartOf="@+id/cityNameTitle"
+            app:layout_constraintEnd_toEndOf="@+id/cityNameTitle"
+            tools:text="TURKEY"
+            android:text="@{city.name}"/>
+
+        <TextView
+            android:id="@+id/cityLatitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintTop_toBottomOf="@+id/cityLatitudeTitle"
+            app:layout_constraintStart_toStartOf="@+id/cityLatitudeTitle"
+            app:layout_constraintEnd_toEndOf="@+id/cityLatitudeTitle"
+            tools:text="36.45"
+            android:text="@{city.latitude}"/>
+
+        <TextView
+            android:id="@+id/cityLongitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/cityLongitudeTitle"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/cityLongitudeTitle"
+            app:layout_constraintTop_toBottomOf="@+id/cityLongitudeTitle"
+            tools:text="42.53"
+            android:text="@{city.longitude}"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

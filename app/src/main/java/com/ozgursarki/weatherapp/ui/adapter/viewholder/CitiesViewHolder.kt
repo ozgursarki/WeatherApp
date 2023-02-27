@@ -8,8 +8,11 @@ import com.ozgursarki.weatherapp.domain.model.CitiesItem
 
 class CitiesViewHolder(private val binding: CityRowBinding) : ViewHolder(binding.root) {
 
-    fun bind(cityItem : CitiesItem) {
-        binding.cityText.text = cityItem.name
+    fun bind(cityItem : CitiesItem,cityClicked : (CitiesItem) -> Unit) {
+        binding.city = cityItem
+        binding.root.setOnClickListener {
+            cityClicked.invoke(cityItem)
+        }
     }
 
     companion object {

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.screen.detail.CityWeatherFragment"
+    android:background="@color/purple">
+
+
+    <ImageView
+        android:id="@+id/weaterIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="@+id/observationTime"
+        app:layout_constraintTop_toBottomOf="@+id/observationTime"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/cityName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="142dp"
+        android:layout_marginTop="32dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Istanbul/Turkey" />
+
+    <TextView
+        android:id="@+id/cityTimezone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="10dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/cityName"
+        app:layout_constraintTop_toBottomOf="@+id/cityName"
+        tools:text="Europe/Istanbul" />
+
+    <TextView
+        android:id="@+id/observationTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/cityName"
+        app:layout_constraintTop_toBottomOf="@+id/cityTimezone"
+        tools:text="27/02/2023 16:57" />
+
+    <LinearLayout
+        android:id="@+id/windIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/pressureIcon"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="24dp"
+        android:background="@color/light_purple">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/wind"
+             />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="wind"
+            android:gravity="center"
+            android:textSize="24dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/pressureIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/windIcon"
+        app:layout_constraintEnd_toStartOf="@+id/humidityIcon"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/windIcon"
+        app:layout_constraintTop_toTopOf="@+id/windIcon"
+        android:background="@color/light_purple">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pressure"
+             />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="pressure"
+            android:gravity="center"
+            android:textSize="24dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/humidityIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/pressureIcon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/pressureIcon"
+        app:layout_constraintTop_toTopOf="@+id/pressureIcon"
+        android:background="@color/light_purple">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/humidity"
+             />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="humidity"
+            android:gravity="center"
+            android:textSize="24dp"/>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

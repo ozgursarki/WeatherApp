@@ -9,11 +9,15 @@ import com.ozgursarki.weatherapp.ui.extension.loadSvgOrOther
 
 class CountriesViewHolder(private var binding: CountryRowBinding) : ViewHolder(binding.root) {
 
-    fun bind(countryItem: CountryItem) {
+    fun bind(countryItem: CountryItem, itemClicked: (CountryItem) -> Unit) {
         binding.countryName.text = countryItem.name
         //Picasso.with(binding.root.context).load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8s1EaDJ8SSS5Dv3hkC8Axdqw72hpd9k10gzC8Pg61bg&s").into(binding.imageView);
         binding.imageView.loadSvgOrOther("https:${countryItem.file_url}")
         binding.countryAlpha.text = countryItem.alpha3
+        binding.root.setOnClickListener {
+            itemClicked.invoke(countryItem)
+        }
+
     }
 
     companion object {
