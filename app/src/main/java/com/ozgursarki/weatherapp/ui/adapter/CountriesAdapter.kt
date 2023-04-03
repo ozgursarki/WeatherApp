@@ -1,22 +1,20 @@
 package com.ozgursarki.weatherapp.ui.adapter
 
-import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.ozgursarki.weatherapp.R
-import com.ozgursarki.weatherapp.domain.Country
-import com.ozgursarki.weatherapp.domain.CountryItem
+import com.ozgursarki.weatherapp.domain.model.Country
+import com.ozgursarki.weatherapp.domain.model.CountryItem
 import com.ozgursarki.weatherapp.ui.adapter.viewholder.CountriesViewHolder
-import javax.inject.Inject
 
-class CountriesAdapter (var countryList: Country = Country()) : RecyclerView.Adapter<CountriesViewHolder>() {
+class CountriesAdapter (var countryList: Country = Country(), val itemClicked: (CountryItem) -> Unit) : RecyclerView.Adapter<CountriesViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CountriesViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.country_row,parent,false)
-        return CountriesViewHolder(view)
+        return CountriesViewHolder.create(parent)
     }
 
     override fun onBindViewHolder(holder: CountriesViewHolder, position: Int) {
-        holder.bind(countryList[position])
+        holder.bind(countryList[position]) {
+            itemClicked.invoke(it)
+        }
     }
 
     override fun getItemCount() = countryList.size

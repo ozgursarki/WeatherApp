@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
    <TextView
        android:id="@+id/countryName"
        android:layout_width="wrap_content"
-       android:layout_height="wrap_content"> </TextView>
-</FrameLayout>
+       android:maxLines="1"
+       android:layout_height="wrap_content"
+       tools:text="country"> </TextView>
+   <ImageView
+       android:id="@+id/imageView"
+       android:layout_width="50dp"
+       android:layout_height="50dp"
+       tools:src="@drawable/common_google_signin_btn_icon_dark"> </ImageView>
+   <TextView
+       android:id="@+id/countryAlpha"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:maxLines="1"
+       tools:text="alpha"> </TextView>
+</LinearLayout>

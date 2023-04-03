@@ -7,7 +7,32 @@
 
     <fragment
         android:id="@+id/countriesFragment"
-        android:name="com.ozgursarki.weatherapp.ui.CountriesFragment"
+        android:name="com.ozgursarki.weatherapp.ui.screen.country.CountriesFragment"
         android:label="fragment_countries"
-        tools:layout="@layout/fragment_countries" />
+        tools:layout="@layout/fragment_countries" >
+        <action
+            android:id="@+id/action_countriesFragment_to_citiesFragment"
+            app:destination="@id/citiesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/citiesFragment"
+        android:name="com.ozgursarki.weatherapp.ui.screen.city.CitiesFragment"
+        android:label="fragment_cities"
+        tools:layout="@layout/fragment_cities" >
+        <argument
+            android:name="country"
+            app:argType="com.ozgursarki.weatherapp.domain.model.CountryItem" />
+        <action
+            android:id="@+id/action_citiesFragment_to_cityWeatherFragment"
+            app:destination="@id/cityWeatherFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cityWeatherFragment"
+        android:name="com.ozgursarki.weatherapp.ui.screen.detail.CityWeatherFragment"
+        android:label="fragment_city_weather"
+        tools:layout="@layout/fragment_city_weather" >
+        <argument
+            android:name="cityItem"
+            app:argType="com.ozgursarki.weatherapp.domain.model.CitiesItem" />
+    </fragment>
 </navigation>

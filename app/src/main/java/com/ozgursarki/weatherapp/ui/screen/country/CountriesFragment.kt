@@ -1,17 +1,20 @@
-package com.ozgursarki.weatherapp.ui
+package com.ozgursarki.weatherapp.ui.screen.country
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.ozgursarki.weatherapp.R
-import com.ozgursarki.weatherapp.domain.Country
 import com.ozgursarki.weatherapp.ui.adapter.CountriesAdapter
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
+import java.util.*
+import kotlin.collections.ArrayList
 
 @AndroidEntryPoint
 class CountriesFragment : Fragment(){
@@ -34,15 +37,27 @@ class CountriesFragment : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        adapter = CountriesAdapter()
+        adapter = CountriesAdapter(itemClicked = {
+           val action = CountriesFragmentDirections.actionCountriesFragmentToCitiesFragment(it)
+            findNavController().navigate(action)
+        })
         val recyclerview = view.findViewById<RecyclerView>(R.id.countriesRv)
         recyclerview.adapter = adapter
+        recyclerview.layoutManager = StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL)
 
         val countries = viewModel.getCountries()
         adapter.setList(countries)
 
+        val list = ArrayList<String>()
 
+        val locales: Array<String> = Locale.getISOCountries()
 
+        for (countryCode in locales) {
+            val obj = Locale("", countryCode)
+            System.out.println("Country Name = " + obj.getDisplayCountry())
+            list.add(obj.getDisplayCountry())
+        }
+        print("x")
     }
 
 }
