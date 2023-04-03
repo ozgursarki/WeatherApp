@@ -7,7 +7,7 @@ import javax.inject.Inject
 class WeatherRepository @Inject constructor(
     private val api: WeatherAPI
 )  {
-    fun getWeatherByCity (cityName : String) : CityDTO {
+    suspend fun getWeatherByCity (cityName : String) : CityDTO {
         return api.getWeatherInfo(query = cityName )
     }
 }
