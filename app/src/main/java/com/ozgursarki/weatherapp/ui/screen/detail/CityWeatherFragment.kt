@@ -27,7 +27,7 @@ class CityWeatherFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentCityWeatherBinding.inflate(inflater,container,false)
+        binding = FragmentCityWeatherBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -37,16 +37,18 @@ class CityWeatherFragment : Fragment() {
         val cityItem = args.cityItem
         viewModel.weatherInfo.observe(viewLifecycleOwner) { cityInfo ->
             binding.apply {
-                address.text = cityInfo.location.name
-                updatedAt.text = cityInfo.location.timezone_id
-                pressure.text = cityInfo.current.pressure.toString()
-                temp.text = "${cityInfo.current.temperature}°C"
-                wind.text = cityInfo.current.wind_speed.toString()
-                humidity.text = cityInfo.current.humidity.toString()
-                weatherDesc.text = cityInfo.current.weather_descriptions.toString()
-                name.text = cityInfo.location.name
-                weatherCode.text = cityInfo.current.weather_code.toString()
+                address.text = cityInfo.request.query
+                updatedAt.text = cityInfo.location.localtime
                 weatherIcon.loadSvgOrOther(cityInfo.current.weather_icons[0])
+                status.text = cityInfo.current.weather_descriptions[0]
+                temp.text = "${cityInfo.current.temperature}°C"
+                weatherFeelslike.text = "${cityInfo.current.feelslike}°C"
+                windSpeed.text = cityInfo.current.wind_speed.toString()
+                pressure.text = cityInfo.current.pressure.toString()
+                humidity.text = cityInfo.current.humidity.toString()
+
+
+
 
             }
         }
