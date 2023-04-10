@@ -17,13 +17,8 @@ import dagger.hilt.android.AndroidEntryPoint
 class CitiesFragment : Fragment() {
     private lateinit var binding: FragmentCitiesBinding
     private val viewModel : CitiesViewModel by viewModels()
-    private val args: CitiesFragmentArgs by navArgs()
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,7 +30,7 @@ class CitiesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val countryItem = args.country
+
 
 
             val adapter = CitiesAdapter(cityClicked = {

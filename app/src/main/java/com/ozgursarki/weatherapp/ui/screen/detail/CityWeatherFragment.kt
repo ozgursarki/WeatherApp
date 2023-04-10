@@ -10,7 +10,6 @@ import androidx.navigation.fragment.navArgs
 import com.ozgursarki.weatherapp.R
 import com.ozgursarki.weatherapp.databinding.FragmentCityWeatherBinding
 import com.ozgursarki.weatherapp.ui.extension.loadSvgOrOther
-import com.ozgursarki.weatherapp.ui.screen.city.CitiesFragmentArgs
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -27,7 +26,7 @@ class CityWeatherFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentCityWeatherBinding.inflate(inflater,container,false)
         return binding.root
     }

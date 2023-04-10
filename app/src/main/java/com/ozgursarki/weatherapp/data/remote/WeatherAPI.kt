@@ -13,7 +13,7 @@ interface WeatherAPI {
     @GET("current")
     suspend fun getWeatherInfo(
         @Query("access_key") access_key:String = "5dec92c75fe152690a4dd6bec8fdada9",
-        @Query("query") query : String = ""
+        @Query("query") query : String
     ) : CityDTO
 }
 

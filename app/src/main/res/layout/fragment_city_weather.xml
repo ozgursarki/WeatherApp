@@ -110,7 +110,7 @@
                 <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:src="@drawable/humidity"
+                    android:src="@drawable/sunrise"
                     app:tint="#FFFFFF" />
 
                 <Space
@@ -121,7 +121,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="12dp"
-                    android:text="Name" />
+                    android:text="Sunrise" />
 
                 <TextView
                     android:id="@+id/name"
@@ -147,7 +147,7 @@
                 <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:src="@drawable/humidity"
+                    android:src="@drawable/info"
                     app:tint="#FFFFFF" />
 
                 <Space
@@ -159,7 +159,7 @@
                     android:layout_height="wrap_content"
                     android:lines="1"
                     android:textSize="12dp"
-                    android:text="Description" />
+                    android:text="Rain" />
 
                 <TextView
                     android:id="@+id/weatherDesc"
@@ -303,7 +303,7 @@
                 <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:src="@drawable/humidity"
+                    android:src="@drawable/sunset"
                     app:tint="#FFFFFF" />
 
                 <Space
@@ -314,7 +314,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="12dp"
-                    android:text="Weather Code" />
+                    android:text="Sunset" />
 
                 <TextView
                     android:id="@+id/weatherCode"
