@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Hava Durumu</string>
+    <string name="no">Numara</string>
+    <string name="city_name">Şehir Adı</string>
+    <string name="latitude">Enlem</string>
+    <string name="longitude">Boylam</string>
+    <string name="feelslike">Hissedilen</string>
+    <string name="wind_speed">Rüzgar Hızı</string>
+    <string name="pressure">Basınç</string>
+    <string name="humidity">Nem</string>
+    <string name="explore">KEŞFET</string>
+</resources>

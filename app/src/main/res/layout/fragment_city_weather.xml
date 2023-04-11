@@ -26,14 +26,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="24dp"
-            android:text="DHAKA, BD" />
+            tools:text="DHAKA, BD" />
 
         <TextView
             android:id="@+id/updated_at"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="14dp"
-            android:text="20 April 2012, 20:08 PM" />
+            tools:text="20 April 2012, 20:08 PM" />
 
         <ImageView
             android:id="@+id/weatherIcon"
@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:textSize="18dp"
             android:layout_gravity="center"
-            android:text="Clear Sky" />
+            tools:text="Clear Sky" />
 
         <TextView
             android:id="@+id/temp"
@@ -74,7 +74,7 @@
             android:textSize="90dp"
             android:fontFamily="sans-serif-thin"
             android:layout_gravity="center"
-            android:text="29Â°C" />
+            tools:text="29Â°C" />
 
 
     </LinearLayout>
@@ -124,14 +124,14 @@
                     android:layout_height="wrap_content"
                     android:lines="1"
                     android:textSize="12dp"
-                    android:text="Feelslike" />
+                    android:text="@string/feelslike" />
 
                 <TextView
                     android:id="@+id/weatherFeelslike"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="14dp"
-                    android:text="16°C" />
+                    tools:text="16°C" />
             </LinearLayout>
 
             <Space
@@ -160,14 +160,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Wind Speed"
+                    android:text="@string/wind_speed"
                     android:textSize="12dp" />
 
                 <TextView
                     android:id="@+id/windSpeed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="26 km/h"
+                    tools:text="26 km/h"
                     android:textSize="14dp" />
             </LinearLayout>
         </LinearLayout>
@@ -205,14 +205,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="12dp"
-                    android:text="Pressure" />
+                    android:text="@string/pressure" />
 
                 <TextView
                     android:id="@+id/pressure"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="14dp"
-                    android:text="1008" />
+                    tools:text="1008" />
             </LinearLayout>
 
             <Space
@@ -242,7 +242,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="12dp"
-                    android:text="Humidity" />
+                    android:text="@string/humidity" />
 
                 <TextView
                     android:id="@+id/humidity"

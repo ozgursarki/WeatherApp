@@ -27,7 +27,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:text="NO" />
+            android:text="@string/no" />
 
         <TextView
             android:id="@+id/cityNameTitle"
@@ -39,7 +39,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/noTitle"
             app:layout_constraintTop_toTopOf="parent"
-            android:text="City Name" />
+            android:text="@string/city_name" />
 
         <TextView
             android:id="@+id/cityLatitudeTitle"
@@ -51,7 +51,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/cityNameTitle"
             app:layout_constraintTop_toTopOf="parent"
-            android:text="Latitude" />
+            android:text="@string/latitude" />
 
         <TextView
             android:id="@+id/cityLongitudeTitle"
@@ -63,7 +63,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/cityLatitudeTitle"
             app:layout_constraintTop_toTopOf="parent"
-            android:text="Longitude" />
+            android:text="@string/longitude" />
 
         <TextView
             android:id="@+id/cityNo"
