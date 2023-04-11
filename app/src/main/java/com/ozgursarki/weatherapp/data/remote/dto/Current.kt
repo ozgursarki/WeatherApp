@@ -1,20 +1,20 @@
 package com.ozgursarki.weatherapp.data.remote.dto
 
 data class Current(
-    val cloudcover: Int,
-    val feelslike: Int,
-    val humidity: Int,
+    val cloudcover: Float,
+    val feelslike: Float,
+    val humidity: Float,
     val is_day: String,
     val observation_time: String,
-    val precip: Int,
-    val pressure: Int,
-    val temperature: Int,
-    val uv_index: Int,
-    val visibility: Int,
-    val weather_code: Int,
+    val precip: Float,
+    val pressure: Float,
+    val temperature: Float,
+    val uv_index: Float,
+    val visibility: Float,
+    val weather_code: Float,
     val weather_descriptions: List<String>,
     val weather_icons: List<String>,
-    val wind_degree: Int,
+    val wind_degree: Float,
     val wind_dir: String,
-    val wind_speed: Int
+    val wind_speed: Float
 )

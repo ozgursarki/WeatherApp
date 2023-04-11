@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.ozgursarki.weatherapp.R
 import com.ozgursarki.weatherapp.databinding.FragmentCitiesBinding
 import com.ozgursarki.weatherapp.ui.adapter.CitiesAdapter
@@ -41,6 +43,16 @@ class CitiesFragment : Fragment() {
 
             val list = viewModel.getCities()
             adapter.setCityList(list)
+
+        val mDividerItemDecoration = DividerItemDecoration(requireContext(),DividerItemDecoration.VERTICAL)
+        with(binding.citiesRv) {
+            layoutManager = LinearLayoutManager(
+                requireContext(),
+                LinearLayoutManager.VERTICAL,
+                false
+            )
+            addItemDecoration(mDividerItemDecoration)
+        }
 
 
 
