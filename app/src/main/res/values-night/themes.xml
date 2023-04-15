@@ -13,4 +13,8 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="SCREEN">
+        <item name="android:background">#AFAFA7</item>
+    </style>
 </resources>

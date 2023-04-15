@@ -10,5 +10,11 @@
     <color name="purple">#393C77</color>
     <color name="light_purple">#927C9F</color>
 
+    <color name="RedOrange">#ffffab91</color>
+    <color name="RedPink">#fff48fb1</color>
+    <color name="BabyBlue">#ff81deea</color>
+    <color name="Violet">#ffcf94da</color>
+    <color name="LightGreen">#ffe7ed9b</color>
+
 
 </resources>

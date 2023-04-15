@@ -7,6 +7,9 @@
 
 
 
+
+
+
    <RelativeLayout
        android:id="@+id/rootView"
        android:layout_width="match_parent"
@@ -14,6 +17,10 @@
        android:background="@drawable/splash_bg"
        android:fitsSystemWindows="true"
        tools:context=".ui.splash.SplashFragment">
+
+
+
+
 
       <ImageView
           android:id="@+id/imageViewBigCloud"
