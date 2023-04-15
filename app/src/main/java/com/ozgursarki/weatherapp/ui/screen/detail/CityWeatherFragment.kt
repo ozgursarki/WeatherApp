@@ -1,10 +1,14 @@
 package com.ozgursarki.weatherapp.ui.screen.detail
 
+import android.animation.ObjectAnimator
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.ozgursarki.weatherapp.R
@@ -18,8 +22,10 @@ class CityWeatherFragment : Fragment() {
     private lateinit var binding: FragmentCityWeatherBinding
     private val args: CityWeatherFragmentArgs by navArgs()
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
 
     }
 
@@ -47,6 +53,16 @@ class CityWeatherFragment : Fragment() {
                 pressure.text = cityInfo.current.pressure.toString()
                 humidity.text = cityInfo.current.humidity.toString()
 
+                progressBar.visibility = View.VISIBLE
+
+                Handler(Looper.getMainLooper()).postDelayed({
+
+                    progressBar.visibility = View.INVISIBLE
+                }, 500)
+
+
+
+
 
 
 
@@ -54,6 +70,9 @@ class CityWeatherFragment : Fragment() {
         }
 
         viewModel.getWeatherByCityName(cityItem)
+
+
+
     }
 
 
