@@ -10,4 +10,5 @@
     <string name="pressure">Basınç</string>
     <string name="humidity">Nem</string>
     <string name="explore">KEŞFET</string>
+    <string name="search_city">Search City...</string>
 </resources>
