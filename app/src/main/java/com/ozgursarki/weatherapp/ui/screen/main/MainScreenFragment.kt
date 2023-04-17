@@ -1,4 +1,4 @@
-package com.ozgursarki.weatherapp.ui.screen.splash
+package com.ozgursarki.weatherapp.ui.screen.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +10,7 @@ import com.ozgursarki.weatherapp.databinding.FragmentSplashBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class SplashFragment : Fragment(){
+class MainScreenFragment : Fragment(){
 
     private lateinit var binding: FragmentSplashBinding
 
@@ -27,7 +27,7 @@ class SplashFragment : Fragment(){
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonExplore.setOnClickListener {
-            val action = SplashFragmentDirections.actionSplashFragmentToCitiesFragment()
+            val action = MainScreenFragmentDirections.actionSplashFragmentToCitiesFragment()
             findNavController().navigate(action)
         }
 

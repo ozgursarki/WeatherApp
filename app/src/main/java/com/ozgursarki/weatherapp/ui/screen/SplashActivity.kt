@@ -10,7 +10,6 @@ import android.util.AttributeSet
 import android.view.View
 import com.ozgursarki.weatherapp.R
 import com.ozgursarki.weatherapp.ui.MainActivity
-import com.ozgursarki.weatherapp.ui.screen.splash.SplashFragment
 
 class SplashActivity : AppCompatActivity() {
 
